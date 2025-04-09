@@ -3,46 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Web Tools - Image & PDF Utilities</title>
-    <meta name="description" content="Free advanced online tools for image compression, PDF conversion, and file optimization. Professional quality tools with no installation required.">
+    <title>Image Tools Pro | Advanced Image Compression & Conversion</title>
+    <meta name="description" content="Free advanced online tools for image compression and PDF conversion. Reduce file sizes and convert images to PDF with professional quality settings.">
+    <meta name="keywords" content="image compressor, image to PDF, reduce image size, online image tools, photo compression, image conversion">
+    <meta name="author" content="Image Tools Pro">
+    <meta property="og:title" content="Image Tools Pro | Advanced Image Utilities">
+    <meta property="og:description" content="Professional-grade image compression and conversion tools. Optimize your images for web and print.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourdomain.com">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- AdSense -->
+    <!-- AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID" crossorigin="anonymous"></script>
+    
     <style>
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
+            --secondary: #3f37c9;
             --accent: #4895ef;
             --light: #f8f9fa;
             --dark: #212529;
             --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --border-radius: 12px;
             --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
             --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
             --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f8fafc;
             color: var(--dark);
+            line-height: 1.6;
         }
 
-        /* Navbar */
         .navbar-brand {
             font-weight: 700;
+            font-size: 1.5rem;
             background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        /* Hero Section */
         .hero-section {
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(72, 149, 239, 0.1));
             padding: 5rem 0;
@@ -52,20 +65,28 @@
 
         .hero-title {
             font-weight: 700;
+            font-size: 2.8rem;
             background: linear-gradient(to right, var(--primary), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            line-height: 1.2;
         }
 
-        /* Tool Cards */
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
         .tool-card {
             background: white;
-            border-radius: 12px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow-sm);
             transition: var(--transition);
             height: 100%;
-            border: none;
+            border: 1px solid rgba(0,0,0,0.05);
             overflow: hidden;
         }
 
@@ -75,16 +96,16 @@
         }
 
         .tool-icon {
-            width: 60px;
-            height: 60px;
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
-            border-radius: 12px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
         }
 
         .tool-badge {
@@ -93,16 +114,24 @@
             right: 15px;
             background: var(--accent);
             color: white;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 0.7rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
         }
 
-        /* Ad Containers */
+        .feature-icon {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
         .ad-container {
             background: white;
-            border-radius: 12px;
+            border-radius: var(--border-radius);
             padding: 1.5rem;
             margin: 2rem 0;
             text-align: center;
@@ -118,17 +147,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Features */
-        .feature-icon {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
         .footer {
             background: var(--dark);
             color: white;
@@ -136,18 +154,19 @@
             margin-top: 4rem;
         }
 
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .hero-section {
-                padding: 3rem 0;
-            }
-            
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             
-            .display-4 {
-                font-size: 2.2rem;
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .tool-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -156,8 +175,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
         <div class="container">
-            <a class="navbar-brand fs-3" href="#">
-                <i class="fas fa-tools me-2"></i>Advanced Tools
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-tools me-2"></i>Image Tools Pro
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -168,13 +187,13 @@
                         <a class="nav-link active" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#image-tools">Image Tools</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pdf-tools">PDF Tools</a>
+                        <a class="nav-link" href="#tools">Tools</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -185,16 +204,16 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container text-center">
-            <h1 class="hero-title display-4 mb-3">Advanced Online Tools for Professionals</h1>
-            <p class="lead text-muted mb-4">Free, secure, and powerful tools for image and PDF processing</p>
+    <section class="hero-section text-center">
+        <div class="container">
+            <h1 class="hero-title mb-4">Advanced Image Processing Tools</h1>
+            <p class="hero-subtitle">Professional-grade tools to compress, convert and optimize your images with complete control over quality and output</p>
             <div class="d-flex justify-content-center gap-3">
-                <a href="#image-tools" class="btn btn-primary btn-lg px-4">
-                    <i class="fas fa-image me-2"></i>Image Tools
+                <a href="/Tools/imgk-compress.html" class="btn btn-primary btn-lg px-4">
+                    <i class="fas fa-compress-alt me-2"></i>Compress Images
                 </a>
-                <a href="#pdf-tools" class="btn btn-outline-primary btn-lg px-4">
-                    <i class="fas fa-file-pdf me-2"></i>PDF Tools
+                <a href="/Tools/img-pdf.html" class="btn btn-outline-primary btn-lg px-4">
+                    <i class="fas fa-file-pdf me-2"></i>Convert to PDF
                 </a>
             </div>
         </div>
@@ -216,65 +235,39 @@
             </script>
         </div>
 
-        <!-- Image Tools Section -->
-        <section id="image-tools" class="mb-5">
-            <h2 class="text-center mb-5"><i class="fas fa-image me-2"></i>Image Tools</h2>
+        <!-- Tools Section -->
+        <section id="tools" class="my-5 py-4">
+            <h2 class="text-center mb-5">Featured Tools</h2>
             <div class="row g-4">
                 <!-- Image Compressor -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="position-relative">
-                            <div class="tool-icon mx-auto">
-                                <i class="fas fa-compress-alt"></i>
-                            </div>
-                            <span class="tool-badge">Popular</span>
+                <div class="col-md-6">
+                    <div class="tool-card p-5 text-center position-relative">
+                        <span class="tool-badge">Most Popular</span>
+                        <div class="tool-icon">
+                            <i class="fas fa-compress-alt"></i>
                         </div>
-                        <h3 class="h5 text-center mb-3">Advanced Image Compressor</h3>
-                        <p class="text-muted text-center mb-4">Reduce image file size with precision quality controls</p>
+                        <h3 class="h4 mb-3">Advanced Image Compressor</h3>
+                        <p class="text-muted mb-4">Reduce image file size with precision quality controls. Perfect for web optimization and storage savings.</p>
                         <div class="d-grid">
-                            <a href="/Tools/imgk-compress.html" class="btn btn-primary">
-                                <i class="fas fa-play me-2"></i>Use Tool
+                            <a href="/Tools/imgk-compress.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play me-2"></i>Compress Now
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Other Image Tools -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="tool-icon mx-auto">
-                            <i class="fas fa-exchange-alt"></i>
+                
+                <!-- Image to PDF -->
+                <div class="col-md-6">
+                    <div class="tool-card p-5 text-center">
+                        <div class="tool-icon">
+                            <i class="fas fa-file-pdf"></i>
                         </div>
-                        <h3 class="h5 text-center mb-3">Image Converter</h3>
-                        <p class="text-muted text-center mb-4">Convert between JPG, PNG, WebP formats</p>
+                        <h3 class="h4 mb-3">Image to PDF Converter</h3>
+                        <p class="text-muted mb-4">Convert multiple images to PDF documents with customizable page layouts and quality settings.</p>
                         <div class="d-grid">
-                            <a href="#" class="btn btn-outline-primary">Use Tool</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="tool-icon mx-auto">
-                            <i class="fas fa-expand"></i>
-                        </div>
-                        <h3 class="h5 text-center mb-3">Image Resizer</h3>
-                        <p class="text-muted text-center mb-4">Resize images to exact dimensions</p>
-                        <div class="d-grid">
-                            <a href="/Tools/imgk-compress.html" class="btn btn-primary">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="tool-icon mx-auto">
-                            <i class="fas fa-cut"></i>
-                        </div>
-                        <h3 class="h5 text-center mb-3">Background Remover</h3>
-                        <p class="text-muted text-center mb-4">Remove backgrounds automatically</p>
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-outline-primary">Use Tool</a>
+                            <a href="/Tools/img-pdf.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-play me-2"></i>Convert Now
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -295,98 +288,36 @@
             </script>
         </div>
 
-        <!-- PDF Tools Section -->
-        <section id="pdf-tools" class="mb-5">
-            <h2 class="text-center mb-5"><i class="fas fa-file-pdf me-2"></i>PDF Tools</h2>
-            <div class="row g-4">
-                <!-- Image to PDF -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="tool-icon mx-auto">
-                            <i class="fas fa-file-archive"></i>
-                        </div>
-                        <h3 class="h5 text-center mb-3">PDF Compressor</h3>
-                        <p class="text-muted text-center mb-4">Reduce PDF file size without quality loss</p>
-                        <div class="d-grid">
-                            <a href="/Tools/imgk-pdf.html" class="btn btn-primary">
-                                <i class="fas fa-play me-2"></i>Use Tool
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Other PDF Tools -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="tool-icon mx-auto">
-                            <i class="fas fa-file-word"></i>
-                        </div>
-                        <h3 class="h5 text-center mb-3">PDF to Word</h3>
-                        <p class="text-muted text-center mb-4">Convert PDF to editable Word documents</p>
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-outline-primary">Use Tool</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="tool-icon mx-auto">
-                            <i class="fas fa-file-import"></i>
-                        </div>
-                        <h3 class="h5 text-center mb-3">PDF Merger</h3>
-                        <p class="text-muted text-center mb-4">Combine multiple PDFs into one file</p>
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-outline-primary">Use Tool</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="tool-card p-4 h-100">
-                        <div class="tool-icon mx-auto">
-                            <i class="fas fa-file-export"></i>
-                        </div>
-                        <h3 class="h5 text-center mb-3">PDF Splitter</h3>
-                        <p class="text-muted text-center mb-4">Split PDF by pages or sections</p>
-                        <div class="d-grid">
-                            <a href="#" class="btn btn-outline-primary">Use Tool</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Features Section -->
         <section id="features" class="my-5 py-5 bg-light rounded-3">
             <div class="container">
-                <h2 class="text-center mb-5">Why Our Tools Stand Out</h2>
+                <h2 class="text-center mb-5">Professional Features</h2>
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="text-center p-4">
-                            <div class="feature-icon mb-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Precision Controls</h3>
+                            <p class="text-muted">Advanced settings for quality, compression level, and output format with real-time previews.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center p-4">
+                            <div class="feature-icon">
                                 <i class="fas fa-shield-alt"></i>
                             </div>
-                            <h3>Secure Processing</h3>
+                            <h3 class="h4 mb-3">Secure Processing</h3>
                             <p class="text-muted">All processing happens in your browser. Your files never leave your device.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="text-center p-4">
-                            <div class="feature-icon mb-3">
-                                <i class="fas fa-tachometer-alt"></i>
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
                             </div>
-                            <h3>Lightning Fast</h3>
-                            <p class="text-muted">Optimized algorithms deliver results in seconds, even for large files.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="text-center p-4">
-                            <div class="feature-icon mb-3">
-                                <i class="fas fa-sliders-h"></i>
-                            </div>
-                            <h3>Advanced Controls</h3>
-                            <p class="text-muted">Precision settings for professionals who need exact results.</p>
+                            <h3 class="h4 mb-3">Lightning Fast</h3>
+                            <p class="text-muted">Optimized algorithms deliver results in seconds, even for large batches of files.</p>
                         </div>
                     </div>
                 </div>
@@ -413,11 +344,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4">
-                    <h3 class="text-white mb-4">Advanced Tools</h3>
-                    <p>Professional-grade online tools for image and PDF processing. Free, secure, and easy to use.</p>
+                    <h3 class="text-white mb-4">Image Tools Pro</h3>
+                    <p>Professional online tools for image processing and conversion. Free, secure, and easy to use.</p>
                     <div class="mt-4">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-white"><i class="fab fa-github"></i></a>
                     </div>
@@ -426,28 +357,26 @@
                     <h4 class="text-white mb-4">Quick Links</h4>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" class="text-white-50">Home</a></li>
-                        <li class="mb-2"><a href="#image-tools" class="text-white-50">Image Tools</a></li>
-                        <li class="mb-2"><a href="#pdf-tools" class="text-white-50">PDF Tools</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">About</a></li>
-                        <li><a href="#" class="text-white-50">Contact</a></li>
+                        <li class="mb-2"><a href="#tools" class="text-white-50">Tools</a></li>
+                        <li class="mb-2"><a href="#features" class="text-white-50">Features</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white-50">About</a></li>
+                        <li><a href="#contact" class="text-white-50">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6 mb-4">
                     <h4 class="text-white mb-4">Tools</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="imgk-compress.html" class="text-white-50">Image Compressor</a></li>
-                        <li class="mb-2"><a href="imgk-pdf.html" class="text-white-50">PDF Tools</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">Image Converter</a></li>
-                        <li class="mb-2"><a href="#" class="text-white-50">PDF to Word</a></li>
-                        <li><a href="#" class="text-white-50">All Tools</a></li>
+                        <li class="mb-2"><a href="/Tools/imgk-compress.html" class="text-white-50">Image Compressor</a></li>
+                        <li class="mb-2"><a href="/Tools/img-pdf.html" class="text-white-50">Image to PDF</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50">All Tools</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 mb-4">
                     <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Subscribe to get updates on new tools and features.</p>
+                    <p>Subscribe for updates on new tools and features.</p>
                     <form class="mt-3">
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Your email">
+                            <input type="email" class="form-control" placeholder="Your email" required>
                             <button class="btn btn-primary" type="submit">Subscribe</button>
                         </div>
                     </form>
@@ -456,7 +385,7 @@
             <hr class="my-4 bg-secondary">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-0 small">&copy; 2023 Advanced Tools. All rights reserved.</p>
+                    <p class="mb-0 small">&copy; 2023 Image Tools Pro. All rights reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <ul class="list-inline mb-0 small">
